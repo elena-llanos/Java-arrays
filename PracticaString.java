@@ -3,23 +3,23 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class practicaEx {
+public class PracticaString {
 	static Scanner teclado  = new Scanner(System.in);
 
 
-	static int[] arrayentero ;
+	static String [] arrayentero ;
 	static int pos = 0;
-	static int userNumber = 0;
+	static String userName = " ";
 
 	public static void main(String[] args) {
 		// El codigo que se ejecuta
 
 
-		String userNumber;
+		String userName;
 
 		do {
-			userNumber = menu();
-			switch (userNumber) {
+			userName = menu();
+			switch (userName) {
 
 
 
@@ -54,7 +54,7 @@ public class practicaEx {
 			default:
 
 			}
-		}while (userNumber != "6");
+		}while (userName != "6");
 
 
 
@@ -66,7 +66,7 @@ public class practicaEx {
 		System.out.print("¿Qué posición quieres borrar?");
 		int posicionAborrar  = teclado.nextInt();
 		//tengo un array de una posicion menos
-		int [] arrayNuevo = new int [arrayentero.length -1];
+		String [] arrayNuevo = new String [arrayentero.length -1];
 		for(int i = 0; i < arrayentero.length; i++) {
 
 			if (i < posicionAborrar) {
@@ -90,12 +90,12 @@ public class practicaEx {
 			System.out.print("¿Qué posición quieres modificar?");
 			int posicionAmodificar  = teclado.nextInt();
 
-			System.out.print("¿Qué número quieres poner?");
-			int numeroNuevo  = teclado.nextInt();
+			System.out.print("¿Qué fruta quieres poner?");
+			String frutaNueva  = teclado.next();
 
-			arrayentero[posicionAmodificar] = numeroNuevo;
+			arrayentero[posicionAmodificar] = frutaNueva;
 		}catch(Exception e) {
-			System.out.println("Error fatal, debes añadir un número");
+			System.out.println("Error fatal, debes añadir letras");
 
 		}
 		verArr();
@@ -111,14 +111,14 @@ public class practicaEx {
 			int posicionAñadir  = teclado.nextInt();
 
 
-			System.out.print("¿Qué número quieres poner?");
-			int otroNumber  = teclado.nextInt();
+			System.out.print("¿Qué fruta quieres poner?");
+			String otraFruta  = teclado.next();
+			
 
 
-
-			arrayentero [posicionAñadir] = otroNumber;
+			arrayentero [posicionAñadir] = otraFruta;
 		}catch(Exception e) {
-			System.out.println("Error fatal, debes añadir un número");
+			System.out.println("Error fatal");
 		}
 
 		verArr();
@@ -138,11 +138,11 @@ public class practicaEx {
 	public static void iniArr() {
 
 		//Función de inicialización del array
-		arrayentero = new int [9];				
+		arrayentero = new String [9];				
 
 		for (int i = 0; i < arrayentero.length; i++);{
 			int i = 0;
-			arrayentero[i] = -1;
+			arrayentero[i] = "";
 
 
 

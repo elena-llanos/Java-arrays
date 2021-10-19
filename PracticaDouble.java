@@ -3,13 +3,13 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class practicaEx {
+public class PracticaDouble {
 	static Scanner teclado  = new Scanner(System.in);
 
 
-	static int[] arrayentero ;
-	static int pos = 0;
-	static int userNumber = 0;
+	static double[] arrayentero ;
+	static double pos = 0;
+	static double userNumber = 0;
 
 	public static void main(String[] args) {
 		// El codigo que se ejecuta
@@ -66,7 +66,7 @@ public class practicaEx {
 		System.out.print("¿Qué posición quieres borrar?");
 		int posicionAborrar  = teclado.nextInt();
 		//tengo un array de una posicion menos
-		int [] arrayNuevo = new int [arrayentero.length -1];
+		double [] arrayNuevo = new double [arrayentero.length -1];
 		for(int i = 0; i < arrayentero.length; i++) {
 
 			if (i < posicionAborrar) {
@@ -91,9 +91,9 @@ public class practicaEx {
 			int posicionAmodificar  = teclado.nextInt();
 
 			System.out.print("¿Qué número quieres poner?");
-			int numeroNuevo  = teclado.nextInt();
+			double numeroNuevo  = teclado.nextDouble();
 
-			arrayentero[posicionAmodificar] = numeroNuevo;
+			arrayentero[(int) posicionAmodificar] = numeroNuevo;
 		}catch(Exception e) {
 			System.out.println("Error fatal, debes añadir un número");
 
@@ -106,19 +106,25 @@ public class practicaEx {
 
 		try	{
 
-
 			System.out.print("¿Qué posición quieres añadir?");
 			int posicionAñadir  = teclado.nextInt();
 
+			System.out.print("¿Qué temperatura quieres poner?");
+			double otroNumber  = teclado.nextDouble();
+			
+			if (otroNumber > -15.5 && otroNumber < 45.0) {
 
-			System.out.print("¿Qué número quieres poner?");
-			int otroNumber  = teclado.nextInt();
+			
+				arrayentero [(int) posicionAñadir] = otroNumber;
 
-
-
-			arrayentero [posicionAñadir] = otroNumber;
-		}catch(Exception e) {
-			System.out.println("Error fatal, debes añadir un número");
+			
+		} 
+			else {
+			System.out.print("Temperatura demasiado baja o demasiado alta");
+		}
+		}
+		catch(Exception e) {
+			System.out.println("Error fatal, debes añadir un número ");
 		}
 
 		verArr();
@@ -138,7 +144,7 @@ public class practicaEx {
 	public static void iniArr() {
 
 		//Función de inicialización del array
-		arrayentero = new int [9];				
+		arrayentero = new double [9];				
 
 		for (int i = 0; i < arrayentero.length; i++);{
 			int i = 0;
@@ -158,8 +164,3 @@ public class practicaEx {
 
 	}
 }
-
-
-
-
-

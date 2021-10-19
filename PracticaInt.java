@@ -3,7 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class practicaEx {
+public class PracticaInt {
 	static Scanner teclado  = new Scanner(System.in);
 
 
@@ -52,7 +52,7 @@ public class practicaEx {
 			case "6":
 				System.out.println("Has elegido salir");
 			default:
-
+				
 			}
 		}while (userNumber != "6");
 

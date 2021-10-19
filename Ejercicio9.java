@@ -1,4 +1,4 @@
-package arrays;
+package eva1;
 
 import java.util.Scanner;
 
@@ -6,41 +6,54 @@ public class Ejercicio9 {
 	static Scanner teclado  = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//String cadena1 = new String("Hola Mundo");
-		
-		String cadena2 = new String("56 ");
-		int ahoraNum = Integer.parseInt(cadena2.trim());
-		System.out.print(ahoraNum);
-		
-		//String cadena1 = String.valueOf(5);
-		//System.out.print(cadena1);
-		
-		//int result = cadena2.compareTo(cadena1);
-		//System.out.print(result);
-		
-		
-		//if (cadena1.equals(cadena2)) {
-		//	System.out.print(cadena2);
-		//}else {
-		//	System.out.print("Noorl");
-		//}
-		
-			
-			//cambiar a mayúsculas//
-		//cadena = cadena.toUpperCase();
-			//camprobar longitud//
-		//int longitud =  cadena.length();
-		
-			//pasar array a char y luedo dar valor que queramos//
-		//char[] cadenatemp = cadena.toCharArray();
-		//cadenatemp[0]= 'A';
-		//cadena = new String(cadenatemp);
-		
-		//char caracter = cadena.charAt(2);
-		
-		
+
+		String userName = new String ("elena");
+		String userPass = new String ("alohomora");
+
+		String givenName = new String ("");
+		String givenPass = new String ("");
+		int nameresult = 0;
+		int passResult = 0;
+		int intentos = 0;
+
+		do {
+
+			System.out.println("Introduce usuario");
+			givenName = teclado.next();
+
+			//nameresult = givenName.compareTo(userName);
+
+			if (givenName.equals(userName)) {
+				System.out.println("Usuario Correcto");
+			}else  {
+				System.out.println("Usuario Incorrecto");
+			}
+		}while(givenName == userName );
+
+		do {
+			System.out.println("Introduce Contraseña");
+			givenPass = teclado.next();
+			intentos ++;
+			passResult = givenPass.compareTo(userPass) ;
+			if(passResult == 0 ) {
+				System.out.println("Contraseña Correcta; WELCOME");
+
+			}else if (intentos ++ >3) {
+				System.out.println("Superado máximo número de intentos: Intenta más tarde");
+			}else {
+				System.out.println("Contraseña Incorrecta");
+			}
+
+		}while (passResult != 0 || intentos ++ >3 );
+
+
+
+
 
 	}
 
 }
+//9. Realiza la clase Java Contrase que pide un nombre por pantalla y una contraseña. 
+//Compara los valores con  unos valores predefinidos y si coinciden muestra un mensaje de bienvenida.
+//Si no coinciden muestra un  mensaje de error por pantalla. 
+//El proceso se repite hasta que los datos son correctos o hasta que se  produzcan más de 3 intentos.

@@ -1,4 +1,4 @@
-package arrays;
+package matrices;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -6,9 +6,7 @@ import java.util.Scanner;
 
 public class Matrices17 {
 	static Scanner teclado  = new Scanner(System.in);
-
-
-	static int matrizentero [][] =  new int[10][5];
+	static int matrizentero [][] =  new int[5][5];
 	static int pos = 0;
 	static int userNumber = 0;
 	static int numeroNuevo = 0;
@@ -19,10 +17,11 @@ public class Matrices17 {
 
 	public static void main(String[] args) {
 		// El codigo que se ejecuta
-		int userNumber;
+		int userNumber = 0;
 
 		do {
-
+						
+			
 			userNumber = menu();
 			switch (userNumber) {
 			case 1:
@@ -55,8 +54,13 @@ public class Matrices17 {
 				control = false;
 			default:
 				break;
+				
+			}if (userNumber >= 6) {
+				System.out.println("Fuera de rango");
+				control = true;
 			}
-
+			
+			
 		} while(control);
 
 
@@ -123,23 +127,35 @@ public class Matrices17 {
 		return arrayNuevo;
 	}
 
+	
 	private static void addElement() {
 		//Esta función añade un número en una posición que pedimos por teclado
-
+		
+		
 
 		int fila  = pedirNumero("¿En qué fila quieres añadir?");
 
-		int columna  = pedirNumero("¿En qué columna quieres borrar?");
+		int columna  = pedirNumero("¿En qué columna quieres añadir?");
 		
 
 		int otroNumber  = pedirNumero("¿Qué número quieres poner?")	;
+		
+		
+		//int [] arrayAinsertar = new int [0];
+		//int posicion = 0;
+		//int[] arrayNuevo = new int [arrayAinsertar.length +1];
+		//	for (int i = 0; i < arrayAinsertar.length; i++) {
+		//		if (i < posicion) {
+		//			arrayNuevo [i] = arrayAinsertar[i];
+		//		}else if(i > posicion) {
+		//			arrayNuevo [i +1 ] = arrayAinsertar[i];
+		//		}
+			//}
+			
+		
+			matrizentero[fila ] [columna ] = otroNumber;
 
-
-
-
-		matrizentero[fila] [columna] = otroNumber;
-
-		verArr();
+			verArr();
 
 
 
@@ -175,7 +191,7 @@ public class Matrices17 {
 
 			}
 			System.out.println(Arrays.toString(matrizentero[i]));
-			System.out.print("\n");
+			//System.out.print("\n");
 
 
 		}

@@ -1,11 +1,15 @@
-package arrays;
+package matrices;
+
+import java.util.Arrays;
 
 public class Matrices18 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int matrizA [][] =  {{1,2,3,4},{5,6,7,8}};
-		int matrizB [][] =  {{1,2},{3,4},{5,6},{7,8}};
+		int matrizA [][] =  {{1,2},{2,4}};
+		int matrizB [][] =  {{1,2},{2,4}};
+		int matrizResultado [][] ; 
+		int suma = 0;
 		
 		int matrizC [][] = new int [matrizA.length][matrizB[0].length];
 		
@@ -13,14 +17,17 @@ public class Matrices18 {
 			
 			for(int i = 0; i < matrizA.length; i++) {
 				
-				for(int j = 0; j < matrizB[0].length; j++);{
+				for(int j = 0; j < matrizB[0].length; j++){
+					suma = suma + matrizB[i][j];
 					
-					for(int k = 0; k < matrizA[0].length;k++);{
+					
+					for(int k = 0; k < matrizA[0].length;k++){
 						
 						
-						matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+				int	resultado = 	matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+						System.out.println(resultado);
 					}
-				}
+				} 
 		}
 		
 			
